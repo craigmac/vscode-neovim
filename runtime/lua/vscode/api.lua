@@ -270,7 +270,7 @@ end
 
 ---Get configuration value
 ---@param name string|string[] The configuration name or an array of configuration names.
----@return unknown|unknown[] The value of the configuration. If name is an array,
+---@return any|any[] The value of the configuration. If name is an array,
 ---                          returns an array of values corresponding to each configuration.
 function M.get_config(name)
   vim.validate({ name = { name, { "s", "t" } } })
@@ -279,7 +279,7 @@ end
 
 ---Update configuration value
 ---@param name string|string[] The configuration name or an array of configuration names.
----@param value unknown|unknown[]  The new value for the configuration.
+---@param value any|any[]  The new value for the configuration.
 ---@param target nil|"global"|"workspace"|"workspace_folder" The configuration target. Defaults to "workspace_folder".
 function M.update_config(name, value, target)
   vim.validate({ name = { name, { "s", "t" } } })
